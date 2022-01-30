@@ -1,6 +1,9 @@
 package com.newsparser.core.parser.phantom;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -65,9 +68,13 @@ public class PhantomParserConfig {
    // }
 
     @Bean
-    protected WebDriver googledriverInit() throws FileNotFoundException {
-
-        DesiredCapabilities caps = new DesiredCapabilities();
+    protected ChromeDriver googledriverInit() throws FileNotFoundException {
+        ChromeDriverService service = new ChromeDriverService.Builder()
+                .usingDriverExecutable(ResourceUtils.getFile("classpath:phantomjs.exe"))
+                .usingAnyFreePort().build();
+        ChromeOptions options = new ChromeOptions().addArguments("--incognito");
+        ChromeDriver driver = new ChromeDriver(service, options);
+    /*    DesiredCapabilities caps = new DesiredCapabilities();
         caps.setJavascriptEnabled(true);
         //  caps.setCapability("takesScreenshot", true);
         caps.setCapability("locationContextEnabled", true);
@@ -82,7 +89,7 @@ public class PhantomParserConfig {
                 PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
                 ResourceUtils.getFile("classpath:phantomjs.exe").getAbsolutePath()
         );
-        WebDriver driver = new PhantomJSDriver(caps);
+        WebDriver driver = new PhantomJSDriver(caps);*/
 
         return driver;
     }

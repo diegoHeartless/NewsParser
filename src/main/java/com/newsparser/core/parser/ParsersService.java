@@ -3,7 +3,7 @@ package com.newsparser.core.parser;
 import com.newsparser.core.arango.NewsArangoRepository;
 import com.newsparser.core.exception.NewsParserException;
 import com.newsparser.core.parser.model.ParsedPostEntry;
-import com.newsparser.core.rewriter.RewriterService;
+import com.newsparser.core.translate.TranslateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -19,18 +19,15 @@ public class ParsersService {
 
     List<Parser> parsers;
 
-    RewriterService rewriterService;
+    TranslateService translateService;
     @Autowired
-    public ParsersService(NewsArangoRepository arangoRepository, List<Parser> parsers, RewriterService rewriterService) {
+    public ParsersService(NewsArangoRepository arangoRepository, List<Parser> parsers, TranslateService translateService) {
         this.arangoRepository = arangoRepository;
         this.parsers = parsers;
-        this.rewriterService = rewriterService;
+        this.translateService = translateService;
     }
 
-
-
-
-    @Scheduled(fixedDelay = 10000)
+   // @Scheduled(fixedDelay = 10000)
     public void runPostParsers() {
         parsers.forEach(parser -> {
             try {
@@ -47,7 +44,7 @@ public class ParsersService {
         });
     }
 
-    @Scheduled(fixedDelay = 30000)
+    //@Scheduled(fixedDelay = 30000)
     public void runEachPostParser() throws IOException, InterruptedException {
         parsers.forEach(parser -> {
             try {
@@ -58,6 +55,7 @@ public class ParsersService {
                                 .limit(5)
                                 .collect(Collectors.toList()));
                 System.out.println(filledPosts);
+                filledPosts.forEach(post -> translateService.rewrite(post.getTitle()));
                 arangoRepository.fillEntrys(filledPosts);
             } catch (IOException exception) {
                 exception.printStackTrace();
