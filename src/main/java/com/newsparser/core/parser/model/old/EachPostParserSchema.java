@@ -1,4 +1,4 @@
-package com.newsparser.core.parser.model;
+package com.newsparser.core.parser.model.old;
 
 public interface EachPostParserSchema {
     String getMainPostClass();

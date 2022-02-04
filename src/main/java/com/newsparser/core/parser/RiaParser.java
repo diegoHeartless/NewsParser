@@ -2,7 +2,7 @@ package com.newsparser.core.parser;
 
 import com.newsparser.core.parser.impl.ParserType;
 import com.newsparser.core.parser.model.ParsedPostEntry;
-import com.newsparser.core.parser.model.ParserSchema;
+import com.newsparser.core.parser.model.old.ParserSchema;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Document;

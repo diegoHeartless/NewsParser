@@ -3,7 +3,7 @@ package com.newsparser.core.parser;
 import com.newsparser.core.arango.NewsArangoRepository;
 import com.newsparser.core.exception.NewsParserException;
 import com.newsparser.core.parser.model.ParsedPostEntry;
-import com.newsparser.core.translate.TranslateService;
+//import com.newsparser.core.translate.TranslateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -19,12 +19,12 @@ public class ParsersService {
 
     List<Parser> parsers;
 
-    TranslateService translateService;
+  //  TranslateService translateService;
     @Autowired
-    public ParsersService(NewsArangoRepository arangoRepository, List<Parser> parsers, TranslateService translateService) {
+    public ParsersService(NewsArangoRepository arangoRepository, List<Parser> parsers/*, TranslateService translateService*/) {
         this.arangoRepository = arangoRepository;
         this.parsers = parsers;
-        this.translateService = translateService;
+     //   this.translateService = translateService;
     }
 
    // @Scheduled(fixedDelay = 10000)
@@ -55,15 +55,16 @@ public class ParsersService {
                                 .limit(5)
                                 .collect(Collectors.toList()));
                 System.out.println(filledPosts);
-                filledPosts.forEach(post -> translateService.rewrite(post.getTitle()));
+              //  filledPosts.forEach(post -> translateService.rewrite(post.getTitle()));
                 arangoRepository.fillEntrys(filledPosts);
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
         });
-  /*      parsers.forEach(parser -> {
+    /*  parsers.forEach(parser -> {
             List<>parser.parseEachLink();
         }*/
+
     }
 
     protected void updateTags(){

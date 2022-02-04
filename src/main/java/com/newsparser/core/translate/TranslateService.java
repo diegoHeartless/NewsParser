@@ -1,10 +1,10 @@
+/*
 package com.newsparser.core.translate;
 
 import com.newsparser.core.arango.NewsArangoRepository;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v96.network.Network;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -49,12 +49,15 @@ public class TranslateService {
      //   dist.put("gu", "zh");
       //  dist.put("zh", "ru");
     }
-    @Scheduled(fixedDelay = 60000)
+   */
+/* @Scheduled(fixedDelay = 60000)
     public void rewritePost(){
         arangoRepository.getExistedPosts().forEach(post -> rewrite(post.getArticles().get(0)));
-    }
+    }*//*
 
-    public void rewrite(String text)  {
+
+  */
+/*  public void rewrite(String text)  {
         HttpHeaders headers = new HttpHeaders();
         headers.add("User-Agent",  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36");
 
@@ -80,8 +83,12 @@ public class TranslateService {
                         entry -> {
                             System.out.println("Body: " + chromeDevTools.send(Network.getResponseBody(entry.getRequestId())).getBody());
                         });
-              /*  ResponseEntity<String> response
-                        = restTemplate.getForEntity(urlTemplate, String.class, headers);*/
+              *//*
+*/
+/*  ResponseEntity<String> response
+                        = restTemplate.getForEntity(urlTemplate, String.class, headers);*//*
+*/
+/*
                 System.out.println(driver);
                // temp = driver..split("\"")[3];
                 if (value.equals("en")) {
@@ -130,5 +137,7 @@ public class TranslateService {
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
+    }*//*
+
 }
+*/

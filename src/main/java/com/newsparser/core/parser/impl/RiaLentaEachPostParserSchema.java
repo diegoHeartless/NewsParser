@@ -1,6 +1,6 @@
 package com.newsparser.core.parser.impl;
 
-import com.newsparser.core.parser.model.EachPostParserSchema;
+import com.newsparser.core.parser.model.old.EachPostParserSchema;
 
 public class RiaLentaEachPostParserSchema implements EachPostParserSchema {
     @Override

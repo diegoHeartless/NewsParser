@@ -1,0 +1,55 @@
+{
+  "model": {
+    "title": "String",
+    "href": "String",
+    "tags": "ListStrings",
+    "articles": "ListStrings"
+  },
+  "steps": [
+    {
+      "stepId": 1,
+      "action": "REQUEST",
+      "parseWith": "JSOUP",
+      "parseByValue": "https://ria.ru/lenta",
+      "returnType": "Document"
+    },
+    {
+      "stepId": 2,
+      "action": "PARSE",
+      "inputType": "Document",
+      "parseWith": "JSOUP",
+      "parseBy": "CLASS",
+      "parseByValue": "list",
+      "returnType": "Element"
+    },
+    {
+      "stepId": 3,
+      "action": "PARSE",
+      "inputType": "Element",
+      "parseWith": "JSOUP",
+      "parseBy": "CLASS",
+      "parseByValue": "list-item",
+      "returnType": "Elements",
+      "createModelForEachReturn": true
+    },
+    {
+      "stepId": 4,
+      "action": "PARSE",
+      "inputType": "Elements",
+      "parseWith": "JSOUP",
+      "parseBy": "CLASS",
+      "parseByValue": "share",
+      "returnType": "Elements"
+    },
+    {
+      "stepId": 5,
+      "action": "PARSE",
+      "inputType": "Elements",
+      "parseWith": "JSOUP",
+      "parseBy": "ATTR",
+      "parseByValue": "data-title",
+      "saveAsField": "title",
+      "returnInput": true
+    }
+  ]
+}

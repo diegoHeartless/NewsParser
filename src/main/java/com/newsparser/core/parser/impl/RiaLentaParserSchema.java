@@ -1,7 +1,7 @@
 package com.newsparser.core.parser.impl;
 
-import com.newsparser.core.parser.model.EachPostParserSchema;
-import com.newsparser.core.parser.model.ParserSchema;
+import com.newsparser.core.parser.model.old.EachPostParserSchema;
+import com.newsparser.core.parser.model.old.ParserSchema;
 import org.springframework.stereotype.Component;
 
 @Component

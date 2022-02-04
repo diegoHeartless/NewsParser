@@ -1,11 +1,7 @@
-package com.newsparser.core.parser.model;
+package com.newsparser.core.parser.model.old;
 
 import com.newsparser.core.parser.impl.ParserType;
-import lombok.Data;
-import lombok.ToString;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
+import com.newsparser.core.parser.model.old.EachPostParserSchema;
 
 public interface ParserSchema {
     String getMainUrl();
