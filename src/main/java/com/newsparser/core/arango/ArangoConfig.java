@@ -11,7 +11,10 @@ public class ArangoConfig implements ArangoConfiguration {
 
     @Override
     public ArangoDB.Builder arango() {
-        return new ArangoDB.Builder().host("localhost", 8529).user("root").password("BadLands7");
+        return new ArangoDB.Builder()
+                .host("localhost", 8529)
+                .user("root")
+                .password("BadLands7");
     }
 
     @Override

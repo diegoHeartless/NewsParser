@@ -8,46 +8,56 @@
   "steps": [
     {
       "stepId": 1,
-      "action": "REQUEST",
+      "action": {
+        "type": "REQUEST",
+        "value": "https://ria.ru/lenta"
+      },
       "parseWith": "JSOUP",
-      "parseByValue": "https://ria.ru/lenta",
       "returnType": "Document"
     },
     {
       "stepId": 2,
-      "action": "PARSE",
+      "action": {
+        "type": "PARSE",
+        "value": "list",
+        "parseBy": "CLASS"
+      },
       "inputType": "Document",
       "parseWith": "JSOUP",
-      "parseBy": "CLASS",
-      "parseByValue": "list",
       "returnType": "Element"
     },
     {
       "stepId": 3,
-      "action": "PARSE",
+      "action": {
+        "type": "PARSE",
+        "value": "list-item",
+        "parseBy": "CLASS"
+      },
       "inputType": "Element",
       "parseWith": "JSOUP",
-      "parseBy": "CLASS",
-      "parseByValue": "list-item",
       "returnType": "Elements",
       "createModelForEachReturn": true
     },
     {
       "stepId": 4,
-      "action": "PARSE",
+      "action": {
+        "type": "PARSE",
+        "value": "share",
+        "parseBy": "CLASS"
+      },
       "inputType": "Elements",
       "parseWith": "JSOUP",
-      "parseBy": "CLASS",
-      "parseByValue": "share",
       "returnType": "Elements"
     },
     {
       "stepId": 5,
-      "action": "PARSE",
+      "action": {
+        "type": "PARSE",
+        "value": "data-title",
+        "parseBy": "ATTR"
+      },
       "inputType": "Elements",
       "parseWith": "JSOUP",
-      "parseBy": "ATTR",
-      "parseByValue": "data-title",
       "saveAsField": "title",
       "returnInput": true
     }
