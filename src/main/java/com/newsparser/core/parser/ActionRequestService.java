@@ -1,3 +1,4 @@
+/*
 package com.newsparser.core.parser;
 
 import com.newsparser.core.parser.model.ParserStep;
@@ -47,3 +48,4 @@ public class ActionRequestService {
         return result;
     }
 }
+*/

@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class InputService {
-    public Object getTempObject(ParserStep step){
+  /*  public Object getTempObject(ParserStep step){
 
         ObjectNode node = new ObjectNode(JsonNodeFactory.instance);
-        node.putArray()
-    }
+
+    }*/
 }

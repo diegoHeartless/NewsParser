@@ -3,7 +3,7 @@ package com.newsparser.core.parser.model.enumtype;
 public class StepType {
     public static enum ReturnType{
         ELEMENT,
-        LIST_OF_ELEMENTS,
+        ELEMENTS,
         VALUE,
         LIST_OF_VALUES,
         DOC

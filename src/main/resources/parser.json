@@ -2,8 +2,8 @@
   "model": {
     "title": "String",
     "href": "String",
-    "tags": "ListStrings",
-    "articles": "ListStrings"
+    "tags": "array",
+    "articles": "array"
   },
   "steps": [
     {
@@ -54,7 +54,7 @@
       "action": {
         "type": "PARSE",
         "value": "data-title",
-        "parseBy": "ATTR"
+        "parseBy": "ATTRIBUTE"
       },
       "inputType": "Elements",
       "parseWith": "JSOUP",

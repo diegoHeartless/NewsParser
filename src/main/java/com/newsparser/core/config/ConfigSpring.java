@@ -31,7 +31,7 @@ public class ConfigSpring {
         return new RestTemplate(requestFactory);
     }
 
-    @Bean
+   /* @Bean
     public List<ParserJsonSchema> getParsers(){
         ObjectMapper mapper = new ObjectMapper();
         List<ParserJsonSchema> parsers = null;
@@ -43,6 +43,6 @@ public class ConfigSpring {
             e.printStackTrace();
         }
         return parsers;
-    }
+    }*/
 }
 

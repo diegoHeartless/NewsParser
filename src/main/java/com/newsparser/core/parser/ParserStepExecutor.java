@@ -1,3 +1,4 @@
+/*
 package com.newsparser.core.parser;
 
 import com.newsparser.core.parser.model.old.ParserJsonSchema;
@@ -113,3 +114,4 @@ public class ParserStepExecutor {
         return result;
     }
 }
+*/

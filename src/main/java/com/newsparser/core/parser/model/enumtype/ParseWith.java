@@ -1,6 +1,6 @@
 package com.newsparser.core.parser.model.enumtype;
 
-public enum ParsBy {
+public enum ParseWith {
     PHANTOM,
     JSOUP
 }

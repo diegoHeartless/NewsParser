@@ -1,6 +1,6 @@
 package com.newsparser.core.parser.model.old;
 
-import com.newsparser.core.parser.model.enumtype.ParsBy;
+import com.newsparser.core.parser.model.enumtype.ParseWith;
 import com.newsparser.core.parser.model.ParserStep;
 import lombok.Data;
 import lombok.ToString;
@@ -10,5 +10,5 @@ import lombok.ToString;
 public class ParserJsonSchema {
     ParserStep step;
     String mainUrl;
-    ParsBy parsBy;
+    ParseWith parsBy;
 }
