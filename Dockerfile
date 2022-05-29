@@ -1,4 +1,3 @@
 FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} NewsParser-1.0-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY target/NewsParser-1.0-SNAPSHOT.jar NewsParser-1.0-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/NewsParser-1.0-SNAPSHOT.jar"]
