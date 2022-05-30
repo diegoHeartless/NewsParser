@@ -135,7 +135,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>
+                                    RewriterService        <mainClass>
                                         com.newsparser.core.AppStarter
                                     </mainClass>
                                 </manifest>
